@@ -1,8 +1,11 @@
-#include "Peripheral_Setup.h"
-
 /**
  * main.c
+ *
+ *  Created on: 21 de out de 2022
+ *      Author: William
  */
+
+#include "Peripheral_Setup.h"
 
 uint32_t count = 0;
 
@@ -20,17 +23,18 @@ int main(void)
     InitPieVectTable();                                 // Initialize the PIE vector table
 
     Setup_GPIO();
+    Setup_ePWM();
 
     EALLOW;
-    PieVectTable.TINT0 = &isr_cpu_timer0;
-    PieCtrlRegs.PIEIER1.bit.INTx7 = 1;                  // Timer 0 - Column (Table)
+    PieVectTable.TINT0 = &isr_cpu_timer0;               // Pointer to interruption function
+    PieCtrlRegs.PIEIER1.bit.INTx7 = 1;                  // Enable Timer 0 - Line 1 - Column 7
+    IER |= M_INT1;                                      // Enable interruption line 1
     EDIS;
-    IER |= M_INT1;                                      // Line (Table)
 
     InitCpuTimers();
-    ConfigCpuTimer(&CpuTimer0, 60, 1000000);
-    // CpuTimer0Regs.TCR.all = 0x4001;                  // Enable interruption
-    StartCpuTimer0();                                   // Enable interruption
+    ConfigCpuTimer(&CpuTimer0, 60, 50000);              // Frequency clock: 60 MHz
+//    CpuTimer0Regs.TCR.all = 0x4001;                   // Enable Timer 0 interruption - bit 14 - TIE
+    StartCpuTimer0();                                   // Enable Timer 0 interruption
 
     EINT;                                               // Enable Global interrupt INTM
     ERTM;                                               // Enable Global real time interrupt DBGM
@@ -47,7 +51,7 @@ int main(void)
         {
         }
 
-        GpioDataRegs.GPATOGGLE.bit.GPIO0 = 1;
+        GpioDataRegs.GPATOGGLE.bit.GPIO3 = 1;
     }
 
     return 0;
@@ -55,7 +59,7 @@ int main(void)
 
 __interrupt void isr_cpu_timer0(void)
 {
-    GpioDataRegs.GPATOGGLE.bit.GPIO1 = 1;
+    GpioDataRegs.GPATOGGLE.bit.GPIO0 = 1;
 
     PieCtrlRegs.PIEACK.all = PIEACK_GROUP1;
 }

@@ -1,10 +1,10 @@
 ******************************************************************************
              TMS320C2000 Linker PC v22.6.0                     
 ******************************************************************************
->> Linked Fri Oct 21 21:13:18 2022
+>> Linked Sun Oct 23 19:51:33 2022
 
 OUTPUT FILE NAME:   <ePWM-LAUNCHXL-F28027.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 0000836a
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000836c
 
 
 MEMORY CONFIGURATION
@@ -14,7 +14,7 @@ MEMORY CONFIGURATION
 PAGE 0:
   BEGIN                 00000000   00000002  00000002  00000000  RWIX
   RAMM0                 00000050   000003b0  00000023  0000038d  RWIX
-  PRAML0                00008000   00000900  00000522  000003de  RWIX
+  PRAML0                00008000   00000900  00000524  000003dc  RWIX
   IQTABLES              003fe000   00000b50  00000000  00000b50  RWIX
   IQTABLES2             003feb50   0000008c  00000000  0000008c  RWIX
   IQTABLES3             003febdc   000000aa  00000000  000000aa  RWIX
@@ -72,26 +72,26 @@ codestart
                   00000068    00000005     main.obj (.cinit)
                   0000006d    00000002     --HOLE-- [fill = 0]
 
-.text      0    00008000    00000522     
+.text      0    00008000    00000524     
                   00008000    00000138     f2802x_sysctrl.obj (.text)
                   00008138    000000ff     f2802x_defaultisr.obj (.text:retain)
                   00008237    00000073     f2802x_cputimers.obj (.text)
-                  000082aa    00000066     Peripheral_Setup.obj (.text)
-                  00008310    0000005a     rts2800_ml.lib : fs_mpy28.asm.obj (.text)
-                  0000836a    00000054                    : boot28.asm.obj (.text)
-                  000083be    00000051     main.obj (.text)
-                  0000840f    00000029     rts2800_ml.lib : exit.c.obj (.text)
-                  00008438    00000029                    : fs_tol28.asm.obj (.text)
-                  00008461    00000028     f2802x_piectrl.obj (.text)
-                  00008489    00000026     f2802x_pievect.obj (.text)
-                  000084af    00000024     rts2800_ml.lib : cpy_tbl.c.obj (.text)
-                  000084d3    0000001d                    : memcpy.c.obj (.text)
-                  000084f0    00000011                    : args_main.c.obj (.text)
-                  00008501    0000000d     main.obj (.text:retain)
-                  0000850e    00000009     rts2800_ml.lib : _lock.c.obj (.text)
-                  00008517    00000008     f2802x_codestartbranch.obj (.text)
-                  0000851f    00000002     rts2800_ml.lib : pre_init.c.obj (.text)
-                  00008521    00000001                    : startup.c.obj (.text)
+                  000082aa    00000068     Peripheral_Setup.obj (.text)
+                  00008312    0000005a     rts2800_ml.lib : fs_mpy28.asm.obj (.text)
+                  0000836c    00000054                    : boot28.asm.obj (.text)
+                  000083c0    00000051     main.obj (.text)
+                  00008411    00000029     rts2800_ml.lib : exit.c.obj (.text)
+                  0000843a    00000029                    : fs_tol28.asm.obj (.text)
+                  00008463    00000028     f2802x_piectrl.obj (.text)
+                  0000848b    00000026     f2802x_pievect.obj (.text)
+                  000084b1    00000024     rts2800_ml.lib : cpy_tbl.c.obj (.text)
+                  000084d5    0000001d                    : memcpy.c.obj (.text)
+                  000084f2    00000011                    : args_main.c.obj (.text)
+                  00008503    0000000d     main.obj (.text:retain)
+                  00008510    00000009     rts2800_ml.lib : _lock.c.obj (.text)
+                  00008519    00000008     f2802x_codestartbranch.obj (.text)
+                  00008521    00000002     rts2800_ml.lib : pre_init.c.obj (.text)
+                  00008523    00000001                    : startup.c.obj (.text)
 
 .pinit     0    00000050    00000000     UNINITIALIZED
 
@@ -256,13 +256,13 @@ MODULE SUMMARY
        f2802x_pievect.obj              38     256                0                 
        f2802x_defaultisr.obj           255    0                  0                 
        f2802x_cputimers.obj            115    0                  24                
-       Peripheral_Setup.obj            102    0                  0                 
+       Peripheral_Setup.obj            104    0                  0                 
        main.obj                        94     5                  2                 
        f2802x_piectrl.obj              40     0                  0                 
        f2802x_codestartbranch.obj      10     0                  0                 
        f2802x_usdelay.obj              4      0                  0                 
     +--+-------------------------------+------+------------------+--------------------+
-       Total:                          970    261                1048              
+       Total:                          972    261                1048              
                                                                                    
     C:\ti\ccs1210\ccs\tools\compiler\ti-cgt-c2000_22.6.0.LTS\lib\rts2800_ml.lib
        fs_mpy28.asm.obj                90     0                  0                 
@@ -280,7 +280,7 @@ MODULE SUMMARY
                                                                                    
        Stack:                          0      0                  768               
     +--+-------------------------------+------+------------------+--------------------+
-       Grand Total:                    1320   285                1826              
+       Grand Total:                    1322   285                1826              
 
 
 GLOBAL DATA SYMBOLS: SORTED BY DATA PAGE
@@ -362,9 +362,9 @@ GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name
 page  address   name                            
 ----  -------   ----                            
 0     00008000  .text                           
-0     0000840f  C$$EXIT                         
-0     00008310  FS$$MPY                         
-0     00008438  FS$$TOL                         
+0     00008411  C$$EXIT                         
+0     00008312  FS$$MPY                         
+0     0000843a  FS$$TOL                         
 0     00008197  _ADCINT1_ISR                    
 0     0000819c  _ADCINT2_ISR                    
 0     00008205  _ADCINT3_ISR                    
@@ -410,7 +410,7 @@ page  address   name
 1     000068c0  _EPwm4Regs                      
 1     00000d01  _EmuBMode                       
 1     00000d00  _EmuKey                         
-0     00008480  _EnableInterrupts               
+0     00008482  _EnableInterrupts               
 0     00008122  _ExtOscSel                      
 1     00000a80  _FlashRegs                      
 1     00000d04  _Flash_CPUScaleFactor           
@@ -426,8 +426,8 @@ page  address   name
 0     0000813d  _INT14_ISR                      
 0     00008237  _InitCpuTimers                  
 0     00008080  _InitPeripheralClocks           
-0     00008461  _InitPieCtrl                    
-0     00008489  _InitPieVectTable               
+0     00008463  _InitPieCtrl                    
+0     0000848b  _InitPieVectTable               
 0     0000802c  _InitPll                        
 0     00008000  _InitSysCtrl                    
 0     000080e3  _IntOsc1Sel                     
@@ -481,31 +481,31 @@ abs   ffffffff  ___TI_prof_data_start
 abs   ffffffff  ___binit__                      
 abs   ffffffff  ___c_args__                     
 0     00000050  ___cinit__                      
-0     00008522  ___etext__                      
+0     00008524  ___etext__                      
 abs   ffffffff  ___pinit__                      
 0     00008000  ___text__                       
-0     000084f0  __args_main                     
+0     000084f2  __args_main                     
 1     00008a1e  __lock                          
-0     00008516  __nop                           
-0     00008512  __register_lock                 
-0     0000850e  __register_unlock               
+0     00008518  __nop                           
+0     00008514  __register_lock                 
+0     00008510  __register_unlock               
 1     00000400  __stack                         
-0     00008521  __system_post_cinit             
-0     0000851f  __system_pre_init               
+0     00008523  __system_post_cinit             
+0     00008521  __system_pre_init               
 1     00008a20  __unlock                        
-0     0000840f  _abort                          
-0     0000836a  _c_int00                        
-0     000084af  _copy_in                        
+0     00008411  _abort                          
+0     0000836c  _c_int00                        
+0     000084b1  _copy_in                        
 1     00008a22  _count                          
-0     00008411  _exit                           
-0     00008501  _isr_cpu_timer0                 
-0     000083be  _main                           
-0     000084d3  _memcpy                         
+0     00008413  _exit                           
+0     00008503  _isr_cpu_timer0                 
+0     000083c0  _main                           
+0     000084d5  _memcpy                         
 0     00008232  _rsvd_ISR                       
 abs   ffffffff  binit                           
 0     00000050  cinit                           
 0     00000000  code_start                      
-0     00008522  etext                           
+0     00008524  etext                           
 abs   ffffffff  pinit                           
 
 
@@ -584,27 +584,27 @@ page  address   name
 0     00008278  _ConfigCpuTimer                 
 0     000082aa  _Setup_GPIO                     
 0     000082ce  _Setup_ePWM                     
-0     00008310  FS$$MPY                         
-0     0000836a  _c_int00                        
-0     000083be  _main                           
-0     0000840f  C$$EXIT                         
-0     0000840f  _abort                          
-0     00008411  _exit                           
-0     00008438  FS$$TOL                         
-0     00008461  _InitPieCtrl                    
-0     00008480  _EnableInterrupts               
-0     00008489  _InitPieVectTable               
-0     000084af  _copy_in                        
-0     000084d3  _memcpy                         
-0     000084f0  __args_main                     
-0     00008501  _isr_cpu_timer0                 
-0     0000850e  __register_unlock               
-0     00008512  __register_lock                 
-0     00008516  __nop                           
-0     0000851f  __system_pre_init               
-0     00008521  __system_post_cinit             
-0     00008522  ___etext__                      
-0     00008522  etext                           
+0     00008312  FS$$MPY                         
+0     0000836c  _c_int00                        
+0     000083c0  _main                           
+0     00008411  C$$EXIT                         
+0     00008411  _abort                          
+0     00008413  _exit                           
+0     0000843a  FS$$TOL                         
+0     00008463  _InitPieCtrl                    
+0     00008482  _EnableInterrupts               
+0     0000848b  _InitPieVectTable               
+0     000084b1  _copy_in                        
+0     000084d5  _memcpy                         
+0     000084f2  __args_main                     
+0     00008503  _isr_cpu_timer0                 
+0     00008510  __register_unlock               
+0     00008514  __register_lock                 
+0     00008518  __nop                           
+0     00008521  __system_pre_init               
+0     00008523  __system_post_cinit             
+0     00008524  ___etext__                      
+0     00008524  etext                           
 1     00000400  __stack                         
 1     00000700  __STACK_END                     
 1     00000880  _DevEmuRegs                     

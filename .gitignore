@@ -51,5 +51,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# Texas intruments DSP
+# Texas instruments DSP
+/Debug/
 /Debug/*
